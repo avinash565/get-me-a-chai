@@ -8,8 +8,8 @@ export default function Home() {
         <div className="flex gap-3 font-bold text-5xl justify-center items-center ml-20">Buy Me a Chai <span><img src="/chai.gif" width={92} alt="" /></span></div>
         <p>A crowdfunding platdorm for creators. Get funded by your fans and followers. Start now!</p>
         <div className="flex gap-3">
-         <Link href={'/login'}><button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Start Here</button></Link>
-          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Read More</button>
+         <Link href={'/login'}><button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Start Here</button></Link>
+          <button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Read More</button>
         </div>
       </div>
 

@@ -17,12 +17,12 @@ const Navbar = () => {
   return (
     <div className='navbarr  top-0 w-full z-100'>
       <nav className='bg-[#020220] text-white flex justify-between px-4 h-15 items-center border-2 border-[#040434]'>
-        
-          <Link href={'/'} className="logo font-bold text-lg flex justify-center items-center">
+
+        <Link href={'/'} className="logo font-bold text-lg flex justify-center items-center">
           <img src="chai.gif" width={44} alt="" />
           <span>GetMeAChai</span>
-          </Link>
-       
+        </Link>
+
         {/* <ul className='flex justify-between gap-5 cursor-pointer'>
       <li>Home</li>
       <li>About</li>
@@ -31,8 +31,9 @@ const Navbar = () => {
       <li>Login</li>
       </ul> */}
         <div className='flex gap-8'>
+          {/* onBlur={()=>{setTimeout(()=>{setshowdropdown(false)}, 100)}}  ye line  setshowdropdown(!showdropdown)} is line ke baad aayegi*/}
 
-          {session && <><button onClick={() => setshowdropdown(!showdropdown)} onBlur={()=>{setTimeout(()=>{setshowdropdown(false)}, 100)}}id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="inline-flex items-center justify-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-extrabold leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none cursor-pointer" type="button">
+          {session && <> <button onClick={() => setshowdropdown(!showdropdown)} onBlur={()=>{setTimeout(()=>{setshowdropdown(false)}, 200)}} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="inline-flex items-center justify-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-extrabold leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none cursor-pointer" type="button">
             {session.user.name}
             <svg className="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" /></svg>
           </button>
@@ -54,10 +55,10 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
+                  <Link href={`/${session.user.name}`} className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
                     <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4" /></svg>
                     Your Page
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
@@ -72,7 +73,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
+                  <a href="" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
                     <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
                     Help center
                   </a>
@@ -84,36 +85,37 @@ const Navbar = () => {
                   </a>
                   <label className="inline-flex items-center cursor-pointer ms-auto">
                     <input type="checkbox" value="" className="sr-only peer" />
-                    <div className="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"></div>
+                    <div className="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:insert-s-0.5 after:insert-s-0.5 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"></div>
                     <span className="ms-3 text-sm font-medium text-heading sr-only">Toggle me</span>
                   </label>
                 </li>
                 <li className="border-t border-default-medium pt-1.5">
-                  <a href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
+                  <Link href="/dashboard" className="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">
                     <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z" /></svg>
-                    Upgrade to PRO
-                  </a>
+                    Dashboard
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={()=>{signOut()}}><a href="" className="inline-flex items-center w-full p-2 text-fg-danger hover:bg-neutral-tertiary-medium rounded">
+                  <Link onClick={()=>signOut()} href="" className="inline-flex items-center w-full p-2 text-fg-danger hover:bg-neutral-tertiary-medium rounded">
                     <svg className="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" /></svg>
                     Sign out
-                  </a></button>
+                  </Link>
                 </li>
               </ul>
-            </div> </>
+            </div>
+          </>
           }
 
-            {/* {session && <Link href={"/dashboard"}><button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Dashboard</button></Link>} */}
+          {/* {session && <Link href={"/dashboard"}><button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Dashboard</button></Link>} */}
 
-            {session && <button onClick={() => { signOut({callbackUrl:"/"}) }} type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Logout</button>}
+          {session && <button onClick={() => { signOut({ callbackUrl: "/" }) }} type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Logout</button>}
 
-            {!session && <Link href={"/"}>
-              <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Home</button></Link>}
+          <Link href={"/"}>
+            <button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Home</button></Link>
 
-            {!session && <Link href={"/login"}>
-              <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Login</button></Link>}
-          
+          {!session && <Link href={"/login"}>
+            <button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-4 py-2.5 text-center leading-5 cursor-pointer">Login</button></Link>}
+
 
         </div>
       </nav>
