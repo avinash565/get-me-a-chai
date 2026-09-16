@@ -12,11 +12,14 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
+}); 
 
 export const metadata = {
   title: "Get me A Chai - Fund your project with chai",
   description: "This website is crowd funding platform for creators",
+  icons: {
+    icon: "/icon.png"
+  },
 };
 
 export default function RootLayout({ children }) {
