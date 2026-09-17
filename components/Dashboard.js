@@ -24,6 +24,7 @@ export default function Dashboard() {
         cover: "",
         razorpayId: "",
         razorpaySecret: "",
+        PhoneNumber: "",
     });
 
     const handleChange = (e) => {
@@ -200,6 +201,26 @@ export default function Dashboard() {
                                 className="w-full p-3 rounded-lg bg-slate-800 hover:bg-slate-700 placeholder-[#C9D9F5] text-slate-200"
                             />
                         </div>
+
+                        <div className="mb-7">
+                            <label
+                                htmlFor="PhoneNumber"
+                                className="block mb-2 text-sm font-medium text-slate-300"
+                            >
+                                Contact Information
+                            </label>
+
+                            <input
+                                value={form.PhoneNumber}
+                                onChange={handleChange}
+                                type="text"
+                                name="razorpayId"
+                                id="razorpayId"
+                                placeholder="Phone Number"
+                                className="w-full p-3 rounded-lg bg-slate-800 hover:bg-slate-700 placeholder-[#C9D9F5] text-slate-200"
+                            />
+                        </div>
+
 
                         {/* Button */}
                         <button
