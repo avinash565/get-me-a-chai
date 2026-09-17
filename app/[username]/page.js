@@ -7,7 +7,7 @@ const Username = async ({ params }) => {
     const { username } = await params
     return (
         <>
-            <PaymentPage username/>
+            <PaymentPage username={username}/>
         </>
     )
 }
