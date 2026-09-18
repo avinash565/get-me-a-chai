@@ -9,5 +9,8 @@ const UserSchema = new Schema({
     coverpic: {type: String},
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
+    razorpayId: { type: String },
+    razorpaySecret: { type: String },
+    PhoneNumber: { type: Number },
 });
 export default mongoose.models.User || model("User", UserSchema);
